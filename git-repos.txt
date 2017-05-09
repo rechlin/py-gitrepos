@@ -1,6 +1,6 @@
 # List of Git repos on your local machine
 # generated mine using:
-# > find /home/rob/projects -name .git > projects-git.repos.txt
+# > find /home/rob/projects -name .git > git-repos.txt
 
 /home/rob/projects/docker/rob.echlin.ca-web/.git
 /home/rob/projects/docker/rob.echlin.ca-web/rob.echlin.ca/.git

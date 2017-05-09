@@ -4,7 +4,7 @@ import pygit2
 import fileinput
 # from datetime import datetime, timezone, timedelta
 
-repoListFile = "projects-git.repos.txt"
+repoListFile = "git-repos.txt"
 
 lineNum = 0
 
