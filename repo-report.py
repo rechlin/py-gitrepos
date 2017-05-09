@@ -31,7 +31,7 @@ for path in repoList:
         print("     - Empty Git Repo")
     else:
         changeStatus = ''
-        print(repo.describe(committish=None, max_candidates_tags=None, describe_strategy=None, pattern=None, only_follow_first_parent=None, show_commit_oid_as_fallback=None, abbreviated_size=None, always_use_long_format=None, dirty_suffix=None ) )
+        print(repo.status() )
 
         if repo.describe(committish=None,dirty_suffix="dirty").endswith( "dirty"):
             changeStatus = "There are changes"
