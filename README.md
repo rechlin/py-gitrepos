@@ -23,6 +23,6 @@ The list is stored in a file called: git-repos.txt
 ## Future development
 Provide a (smaller) list of folders where your repos are to be found then find the ".git" folders in Python directly
 
-Examples are from Linux:
+Examples from Linux:
 - Your projects: /home/me/projects
 - Your web sites: /var/www
