@@ -31,13 +31,20 @@ for path in repoList:
         print("     - Empty Git Repo")
     else:
         changeStatus = ''
-        print(repo.status() )
+        repoStatus = repo.status()
+        repoChangeCount = repoStatus.__len__()
+        changeStatusLead = "     - "
+        
+        if debug:
+            print('Status: ', repoStatus)
+            print("Count: ", repoChangeCount)
 
-        if repo.describe(committish=None,dirty_suffix="dirty").endswith( "dirty"):
-            changeStatus = "There are changes"
+        if repoChangeCount > 0:
+            changeStatus = "There are %s changes"
+            print(changeStatusLead, changeStatus % repoChangeCount)
         else:
             changeStatus = "No changes"
-        print("     - ", changeStatus)
+            print(changeStatusLead, changeStatus )
 
 print("end")
 
