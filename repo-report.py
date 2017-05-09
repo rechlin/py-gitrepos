@@ -10,6 +10,7 @@ lineNum = 0
 
 repoList = []
 debug = False
+changeStatusLead = "     - "
 
 
 with fileinput.input(repoListFile) as f:
@@ -17,10 +18,16 @@ with fileinput.input(repoListFile) as f:
         lineNum += 1;
 
         lineText = line.strip('\n')
+        
         if debug:
             print("line #", lineNum, " ", lineText)
-        
-        repoList.append(lineText)
+            
+        if len(lineText) == 0:
+            pass
+        elif lineText[0] == '#':
+            pass
+        else:
+            repoList.append(lineText)
 
 for path in repoList:
     print("repo at ", path)
@@ -28,12 +35,11 @@ for path in repoList:
     repoPath = pygit2.discover_repository(path)
     repo = pygit2.Repository(repoPath)
     if repo.is_empty:
-        print("     - Empty Git Repo")
+        print(changeStatusLead,"Empty Git Repo")
     else:
         changeStatus = ''
         repoStatus = repo.status()
-        repoChangeCount = repoStatus.__len__()
-        changeStatusLead = "     - "
+        repoChangeCount = len(repoStatus)
         
         if debug:
             print('Status: ', repoStatus)
