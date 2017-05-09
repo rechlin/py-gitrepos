@@ -4,14 +4,14 @@ A Python script to list the status (are there changes?) of a list of git repos.
 
 The list is stored in a file called: git-repos.txt
 
-## Extra features:
+## Extra features
 - Ignores blank lines
 - Ignores lines starting with '#'
 
-## Parameters:
+## Parameters
 - The script does not take parameters 
 
-## Known issues:
+## Known issues
 - Requires \n at the end of all lines, 
   - This means it may mess up on Mac or Windows
   - Last line with a path must have \n on it (In other words, not be the last line)
@@ -21,7 +21,8 @@ The list is stored in a file called: git-repos.txt
   - a path to a non-existent location, such as /user/locla (spellos)
 
 ## Future development
-- Provide a (smaller) list of folders where your repos are to be found (examples are from Linux)
-  then find the ".git" folders in Python directly
-  - Your projects: /home/me/projects
-  - Your web sites: /var/www
+Provide a (smaller) list of folders where your repos are to be found then find the ".git" folders in Python directly
+
+Examples are from Linux:
+- Your projects: /home/me/projects
+- Your web sites: /var/www
