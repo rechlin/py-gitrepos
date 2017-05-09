@@ -21,6 +21,7 @@ The list is stored in a file called: git-repos.txt
   - a path to a non-existent location, such as /user/locla (spellos)
 
 == Future development
-- Provide a (smaller) list folders where your repos are to be found (examples are from Linux)
+- Provide a (smaller) list of folders where your repos are to be found (examples are from Linux)
+  then find the ".git" folders in Python directly
   - Your projects: /home/me/projects
   - Your web sites: /var/www
