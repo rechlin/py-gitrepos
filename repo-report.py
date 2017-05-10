@@ -2,14 +2,20 @@
 
 import pygit2
 import fileinput
+import os
 # from datetime import datetime, timezone, timedelta
+debug = False
 
-repoListFile = "git-repos.txt"
+ScriptFolder = os.path.dirname(os.path.realpath(__file__))
+ListFileName = "git-repos.txt"
+repoListFile = ScriptFolder + "/" + ListFileName
+
+if debug:
+    print("List file with path: ", repoListFile)
 
 lineNum = 0
 
 repoList = []
-debug = False
 changeStatusLead = "     - "
 
 
