@@ -4,7 +4,7 @@ import os.path
 import fileinput
 import sys
 import glob
-from repo_report import repoListFromFile, processRepoList
+from git_repo_lib import repoListFromFile, processRepoList
 
 debug = True
 
