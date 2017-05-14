@@ -1,39 +1,26 @@
 #!/usr/bin/python3
 
-from os.path import isfilepath, exists
-
-# check for a top directory on command line interface
-
+import os.path
+import fileinput
 import sys
+import glob
+from repo_report import repoListFromFile, processRepoList
 
 debug = True
 
 
-            
- 
 def repoSearch(topDir):
     """ Return a list of paths to git repos in topDir and sub folders """
-    result = []
+    results = []
+    topDirGlob = topDir + '/**/.git'
+    if debug:
+        print('glob: ', topDirGlob)
     
-    
-    
-def processRepoList(listFile):
-    """ 
-    Extract a list of folders from the repo list file.
-    
-    Return the list.
-    """
-    if not os.path.isfilepath(repoListFile):
-        print('Error: repo list file not found: ', listFile
-        return
-    
-    with fileinput.input(listFile) as f:
-        for line in f:
-            lineNum += 1;
+    for filename in glob.iglob(topDirGlob, recursive=True):
+        results.append(filename)
 
-            lineText = line.strip('\n')
-            
-            print(lineNum, ' ', lineText
+    return(results)
+
 
 
 def main():
@@ -48,32 +35,42 @@ def main():
         print("script: ", sys.argv[0])
 
     if numArgs > 1:
-        for arg in sys.argv[1:]
-        if debug:
-            print("This arg: ", arg)
-        
-        if "=" in sys.argv[1]:
-            param, topDir = sys.argv[1].split("=")
-            
+        for arg in sys.argv[1:]:
             if debug:
-                print("    param: ", param)
-                print("    value: ", topDir)
+                print("This arg: ", arg)
             
-            if param == "topDir":
-                if os.path.exists(topDir):
-                    print('Processing files in top folder: ', topDir)
-                    repoSearch(topDir)
+            if "=" in sys.argv[1]:
+                param, topDir = sys.argv[1].split("=")
+                
+                if debug:
+                    print("    param: ", param)
+                    print("    value: ", topDir)
+                
+                if param == "topDir":
+                    if os.path.exists(topDir):
+                        print('Processing files in top folder: ', topDir)
+                        repoList = repoSearch(topDir)
+                        if debug:
+                            print('repolist from search of topDir: ', topDir)
+                            print('    ',repoList)
+                            
+                        processRepoList(repoListFile)
+                    else:
+                        print('Error: top folder not found: ', topDir)
+                        return()
+                            
                 else:
-                    print('Error: top folder not found: ', topDir)
                     processRepoList(repoListFile)
-                        
-            else:
-                processRepoList(repoListFile)
                 
     else:
-        processRepoList(repoListFile)
+        if debug:
+            print('no params on command line')
+            print('repoListFile: ', repoListFile)
+
+        repoList = repoListFromFile(repoListFile)
+        processRepoList(repoList)
     
-    print("end")
+    print("repos end")
         
 
 #----------------------------------

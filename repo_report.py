@@ -3,17 +3,17 @@
 import pygit2
 import fileinput
 import os
-# from datetime import datetime, timezone, timedelta
-debug = False
 
-ScriptFolder = os.path.dirname(os.path.realpath(__file__))
-ListFileName = "git-repos.txt"
-repoListFile = ScriptFolder + "/" + ListFileName
+if not ('debug' in locals() or 'debug' in globals()):
+    debug = False
 
 
-def createRepoList(file):
+def repoListFromFile(file):
     lineNum = 0
     repoList = []
+    
+    if debug:
+        print('in repoListFromFile, file is ', file)
     
     with fileinput.input(file) as f:
         for line in f:
@@ -62,11 +62,15 @@ def processRepoList(repoList):
 
     
 def main():
+    ListFileName = "git-repos.txt"
+    ScriptFolder = os.path.dirname(os.path.realpath(__file__))
+    repoListFile = ScriptFolder + "/" + ListFileName
+    
     if debug:
         print("List file with path: ", repoListFile)
 
 
-    repoList = createRepoList(repoListFile)
+    repoList = repoListFromFile(repoListFile)
 
     processRepoList(repoList)
 
