@@ -6,7 +6,7 @@ import sys
 import glob
 from git_repo_lib import repoListFromFile, processRepoList
 
-debug = True
+debug = False
 
 
 def repoSearch(topDir):
@@ -50,16 +50,18 @@ def main():
                     if os.path.exists(topDir):
                         print('Processing files in top folder: ', topDir)
                         repoList = repoSearch(topDir)
+                        
                         if debug:
                             print('repolist from search of topDir: ', topDir)
                             print('    ',repoList)
                             
-                        processRepoList(repoListFile)
+                        processRepoList(repoList)
                     else:
                         print('Error: top folder not found: ', topDir)
                         return()
                             
                 else:
+                    print("param is not topDir")
                     processRepoList(repoListFile)
                 
     else:
