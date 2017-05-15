@@ -71,7 +71,6 @@ def main():
 
 
     repoList = repoListFromFile(repoListFile)
-
     processRepoList(repoList)
 
     print("end")
