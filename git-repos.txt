@@ -11,7 +11,7 @@
 /home/rob/projects/hands-on-with-kubernetes-workshop/.git
 /home/rob/projects/C/QTSimpleNotebook/QTSimpleNotebook/.git
 /home/rob/projects/klee-test/klee/.git
-/home/rob/projects/docker/Python-DigitalOcean/.git
-/home/rob/projects/python-htmd/htmd/.git
 /home/rob/projects/python-one/py-gitrepos/.git
+/home/rob/projects/docker/Python-DigitalOcean/.git
 /home/rob/projects/python-one
+/home/rob/projects/python-htmd/htmd/.git
