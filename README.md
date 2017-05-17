@@ -6,15 +6,19 @@ A Python script to list the status (are there changes?) of a list of git repos.
 
 * The list of repos is stored in a file called: git-repos.txt
 
-## Usage
+## Prepration
 Store the script and list in a folder on your path, in the same folder.
+
+## Usage
+* repo-report.py
+* repo-report.py -h
+  * --help help
+* repo-report.py path1 /path/2 /path/3/.git
+  * 
 
 ## Extra features
 * Ignores blank lines
 * Ignores lines starting with '#'
-
-## Parameters
-* The script does not take parameters 
 
 ## Known issues
 * Requires \n at the end of all lines, 
