@@ -7,7 +7,7 @@ import glob
 import argparse
 from lib_git_repo import repoListFromFile, processRepoList
 
-debug = True
+debug = False
 
 
 def repoSearch(topDir):
@@ -16,7 +16,7 @@ def repoSearch(topDir):
     topDirGlob = topDir + '/**/.git'
     if debug:
         print('glob: ', topDirGlob)
-    
+
     for filename in glob.iglob(topDirGlob, recursive=True):
         results.append(filename)
 
@@ -26,14 +26,14 @@ def repoSearch(topDir):
 def args(listFile):
     """ Check input, return path or other info """
     parser = argparse.ArgumentParser()
-    parser.add_argument('path', 
+    parser.add_argument('path',
             nargs='*',
             help="Path(s) to one or more folders that contain one or more git repos",
             default=argparse.SUPPRESS)
-    
+
     args = parser.parse_args()
     return(args)
-    
+
 
 
 def helpMsg(listFile):
@@ -52,19 +52,19 @@ def main():
 
     if debug:
         print('args is: ', toDo)
-    
+
     if toDo == 'noListFile':
         print('The list file was not found')
         helpMsg(repoListFile)
-        
+
     elif toDo == 'listFile':
         repoList = repoListFromFile(repoListFile)
         processRepoList(repoList)
-    
+
     else:
         repoList = repoListFromFile(repoListFile)
         processRepoList(repoList)
-        
+
     return()
 
 
