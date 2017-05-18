@@ -6,8 +6,11 @@ A Python script to list the status (are there changes?) of a list of git repos.
 
 * The list of repos is stored in a file called: git-repos.txt
 
-## Prepration
-Store the script and list in a folder on your path, in the same folder.
+## Preparation
+* Install libgit2  0.25.1
+* Install pygit2   0.25.1
+* Store the script in a folder on your path
+* Optionally store a list of repos in git-repos.txt in the same folder
 
 ## Usage
 * repo-report.py
