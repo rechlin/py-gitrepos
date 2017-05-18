@@ -21,9 +21,9 @@ Store the script and list in a folder on your path, in the same folder.
 * Ignores blank lines
 * Ignores lines starting with '#'
 
-Examples from Linux:
+## Examples from Linux:
 * Your projects: /home/me/projects
 * Your web sites: /var/www
 
-# Known Issues
+## Known Issues
 Please report any issues you find!
