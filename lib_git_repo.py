@@ -1,4 +1,4 @@
-#!/usr/bin/python3
+#!/usr/binhon3
 
 import pygit2
 import fileinput
@@ -14,6 +14,10 @@ def repoListFromFile(file):
 
     if debug:
         print('in repoListFromFile, file is ', file)
+
+    if not os.path.exists(file):
+        print('File not found: ', file)
+        exit()
 
     with fileinput.input(file) as f:
         for line in f:
