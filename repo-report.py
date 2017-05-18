@@ -23,24 +23,18 @@ def repoSearch(topDir):
     return(results)
 
 
-def args(listFile):
+def getArgs(listFile):
     """ Check input, return path or other info """
-    parser = argparse.ArgumentParser()
-    parser.add_argument('path',
+    parser = argparse.ArgumentParser(
+        description='Report number of changes in repos',
+        epilog="With no arguments, will process file list in: " + listFile)
+    parser.add_argument('paths',
             nargs='*',
             help="Path(s) to one or more folders that contain one or more git repos",
             default=argparse.SUPPRESS)
 
-    args = parser.parse_args()
-    return(args)
-
-
-
-def helpMsg(listFile):
-    """ Print help message """
-    print('No param: process the files in the default help file: ',listFile)
-    print('One param: name of a folder that has a git repo or folders with repos')
-    print('First param is help, --help, -h: print this message')
+    myArgs = parser.parse_args()
+    return myArgs
 
 
 def main():
@@ -48,24 +42,27 @@ def main():
     ListFileName = "git-repos.txt"
     repoListFile = ScriptFolder + "/" + ListFileName
 
-    toDo = args(repoListFile)
+    toDo = getArgs(repoListFile)
+    params = vars(toDo)
 
     if debug:
         print('args is: ', toDo)
+        print('params is: ', params)
 
-    if toDo == 'noListFile':
-        print('The list file was not found')
-        helpMsg(repoListFile)
-
-    elif toDo == 'listFile':
+    if len(params) == 0:
+        if debug:
+            print('No argument')
+        print('-- Processing repo list file: ', repoListFile)
         repoList = repoListFromFile(repoListFile)
         processRepoList(repoList)
-
-    else:
-        repoList = repoListFromFile(repoListFile)
-        processRepoList(repoList)
-
-    return()
+    elif 'paths' in params:
+        if debug:
+            print('path arguments: ', params['paths'])
+        print('-- Processing repos in folders')
+        for path in params['paths']:
+            print('-- topDir: ', path)
+            repos = repoSearch(path)
+            processRepoList(repos)
 
 
 
