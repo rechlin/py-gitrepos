@@ -3,6 +3,7 @@
 import pygit2
 import fileinput
 import os
+import glob
 
 if not ('debug' in locals() or 'debug' in globals()):
     debug = False
@@ -37,6 +38,19 @@ def repoListFromFile(file):
                 repoList.append(lineText)
 
         return repoList
+
+
+def repoSearch(topDir):
+    """ Return a list of paths to git repos in topDir """
+    results = []
+    topDirGlob = topDir + '/**/.git'
+    if debug:
+        print('glob: ', topDirGlob)
+
+    for filename in glob.iglob(topDirGlob, recursive=True):
+        results.append(filename)
+
+    return(results)
 
 
 def processRepoList(repoList):

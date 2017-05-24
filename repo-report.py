@@ -3,24 +3,10 @@
 import os.path
 import fileinput
 import sys
-import glob
 import argparse
-from lib_git_repo import repoListFromFile, processRepoList
+from lib_git_repo import *
 
 debug = False
-
-
-def repoSearch(topDir):
-    """ Return a list of paths to git repos in topDir """
-    results = []
-    topDirGlob = topDir + '/**/.git'
-    if debug:
-        print('glob: ', topDirGlob)
-
-    for filename in glob.iglob(topDirGlob, recursive=True):
-        results.append(filename)
-
-    return(results)
 
 
 def getArgs(listFile):
