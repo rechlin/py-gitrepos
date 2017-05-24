@@ -1,6 +1,6 @@
 # Python Git Repos Status
 
-A Python script to list the status (are there changes?) of a list of git repos.
+A Python 3 script to list the status (are there changes?) of a list of git repos.
 
 * Script name: **repo-report.py**
 
