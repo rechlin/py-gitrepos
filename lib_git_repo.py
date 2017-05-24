@@ -108,8 +108,6 @@ def main():
     if debug:
         print("List file with path: ", repoListFile)
 
-
-    
     repos = repoInfo()
     repoList = repos.repoListFromFile(repoListFile)
     repos.processRepoList(repoList)
