@@ -13,9 +13,11 @@ class repoInfo:
     """ Report information about git repos """
 
     def __init__(self):
-        self.data = []
+        self.leadText = "     - "
+
 
     def repoListFromFile(self, file):
+        leadText = self.leadText
         lineNum = 0
         repoList = []
 
@@ -49,6 +51,15 @@ class repoInfo:
     def repoSearch(self, topDir):
         """ Return a list of paths to git repos in topDir """
         results = []
+        leadText = self.leadText
+
+        if not os.path.exists(topDir):
+            print(leadText, 'Error: Folder does not exist: ', topDir)
+            exit()
+        elif not os.path.isdir(topDir):
+            print(leadText, 'Error: Not a folder: ', topDir)
+            exit()
+
         topDirGlob = topDir + '/**/.git'
         if debug:
             print('glob: ', topDirGlob)
@@ -60,29 +71,31 @@ class repoInfo:
 
 
     def processRepoList(self, repoList):
-        changeStatusLead = "     - "
+        """ Report on all repos in list """
+
+        leadText = self.leadText
 
         for path in repoList:
             print("repo at ", path)
 
             if not os.path.exists(path):
-                print(changeStatusLead, 'Folder/file does not exist: ', path)
+                print(leadText, 'Folder/file does not exist: ', path)
                 continue
 
             try:
                 repoPath = pygit2.discover_repository(path)
             except KeyError:
-                print(changeStatusLead, 'Error: No repo in ', path)
-                print(changeStatusLead, 'Possibly more than one repo in nested folders?')
+                print(leadText, 'Error: No repo in ', path)
+                print(leadText, 'Possibly more than one repo in nested folders?')
                 continue
             except Exception as e:
-                print(changeStatusLead, 'Error: Not sure what error', e)
+                print(leadText, 'Error: Not sure what error', e)
 
                 raise
 
             repo = pygit2.Repository(repoPath)
             if repo.is_empty:
-                print(changeStatusLead,"Empty Git Repo")
+                print(leadText,"Empty Git Repo")
             else:
                 changeStatus = ''
                 repoStatus = repo.status()
@@ -94,10 +107,10 @@ class repoInfo:
 
                 if repoChangeCount > 0:
                     changeStatus = "%s changes"
-                    print(changeStatusLead, changeStatus % repoChangeCount)
+                    print(leadText, changeStatus % repoChangeCount)
                 else:
                     changeStatus = "No changes"
-                    print(changeStatusLead, changeStatus )
+                    print(leadText, changeStatus )
 
 
 def main():
