@@ -4,7 +4,7 @@ import os.path
 import fileinput
 import sys
 import argparse
-from lib_git_repo import *
+from lib_git_repo import repoInfo
 
 debug = False
 
@@ -30,6 +30,8 @@ def main():
 
     toDo = getArgs(repoListFile)
     params = vars(toDo)
+    
+    ri = repoInfo()
 
     if debug:
         print('args is: ', toDo)
@@ -39,16 +41,16 @@ def main():
         if debug:
             print('No argument')
         print('-- Processing repo list file: ', repoListFile)
-        repoList = repoListFromFile(repoListFile)
-        processRepoList(repoList)
+        repoList = ri.repoListFromFile(repoListFile)
+        ri.processRepoList(repoList)
     elif 'paths' in params:
         if debug:
             print('path arguments: ', params['paths'])
         print('-- Processing repos in folders')
         for path in params['paths']:
             print('-- topDir: ', path)
-            repos = repoSearch(path)
-            processRepoList(repos)
+            repoList = ri.repoSearch(path)
+            ri.processRepoList(repoList)
 
 
 
