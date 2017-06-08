@@ -17,54 +17,45 @@ class TestRepoListFromFile:
         self.debug = True
         self.test_path = "/testdata/"
 
-    # list file with no changes
-    def test_listfile_one_entry(self):
-        fileName = "one-repo_no_change.txt"
+
+    # common code
+    def getList(self, fileName):
         listFile = self.ri_path + self.test_path + fileName
         list = self.ri.repoListFromFile(listFile)
 
         if self.debug:
-            print('listFile location: ', listFile)
+            print('list content = ', list)
+
+        return(list)
+
+
+    # tests
+    def test_listfile_one_entry(self):
+        list = self.getList("one-repo_no_change.txt")
 
         assert list == ['testdata/repo_no_change']
 
+
     def test_listfile_two_entries(self):
-        fileName = "two_repos.txt"
-
-        listFile = self.ri_path + self.test_path + fileName
-        list = self.ri.repoListFromFile(listFile)
-
-        if self.debug:
-            print('listFile location = ', list)
+        list = self.getList("two_repos.txt")
 
         assert list == ['testdata/repo_no_change', 'test-data/one_change']
 
+
     def test_bad_listfile(self):
-        fileName = "no_file_here.txt"
-
-        listFile = self.ri_path + self.test_path + fileName
-
         with pytest.raises(SystemExit):
-            list = self.ri.repoListFromFile(listFile)
+            list = self.getList("no_file_here.txt")
+
 
     def test_blank_lines(self):
-        fileName = "repoList_with_spaces.txt"
-
-        listFile = self.ri_path + self.test_path + fileName
-        list = self.ri.repoListFromFile(listFile)
-
-        if self.debug:
-            print('listFile location = ', list)
+        list = self.getList("repoList_with_spaces.txt")
 
         assert list == ['testdata/repo_no_change', 'test-data/one_change']
 
     def test_blank_lines_comments(self):
-        fileName = "repoList_with_spaces_comments.txt"
-
-        listFile = self.ri_path + self.test_path + fileName
-        list = self.ri.repoListFromFile(listFile)
-
-        if self.debug:
-            print('listFile location = ', list)
+        list = self.getList("repoList_with_spaces_comments.txt")
 
         assert list == ['testdata/repo_no_change', 'test-data/one_change']
+
+
+
