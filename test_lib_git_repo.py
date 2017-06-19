@@ -67,10 +67,27 @@ class TestRepoSearch:
         self.debug = True
         self.test_path = "/testdata/"
 
+
+    def clean_path(self, path_list):
+        ''' Remove leading folders from path that change between users '''
+        scriptPath = os.path.dirname(os.path.realpath(__file__)) + '/'
+
+        result_list = []
+        for path in path_list:
+            if path.startswith(scriptPath):
+                result_list.append(path.replace(scriptPath, '', 1))
+            else:
+                result_list.append(path)
+
+        return result_list
+
+
     def test_repo_no_change(self):
         folder = "repo_no_change"
         path = self.ri_path + self.test_path + folder
         repo_list = self.ri.repoSearch(path)
 
-        assert repo_list == ['/home/rob/projects/python-one/repo-report/testdata/repo_no_change/.git']
+        repo_list_clean = self.clean_path(repo_list)
+
+        assert repo_list_clean == ['testdata/repo_no_change/.git']
 
