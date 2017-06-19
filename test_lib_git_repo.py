@@ -58,4 +58,19 @@ class TestRepoListFromFile:
         assert list == ['testdata/repo_no_change', 'test-data/one_change']
 
 
+class TestRepoSearch:
+    """ Test repoSearch """
+
+    def setup_class(self):
+        self.ri = lib_git_repo.repoInfo()
+        self.ri_path = os.path.dirname(inspect.getfile(lib_git_repo))
+        self.debug = True
+        self.test_path = "/testdata/"
+
+    def test_repo_no_change(self):
+        folder = "repo_no_change"
+        path = self.ri_path + self.test_path + folder
+        repo_list = self.ri.repoSearch(path)
+
+        assert repo_list == ['/home/rob/projects/python-one/repo-report/testdata/repo_no_change/.git']
 
