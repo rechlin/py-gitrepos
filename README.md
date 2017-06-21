@@ -29,4 +29,5 @@ A Python 3 script to list the status (are there changes?) of a list of git repos
 * Your web sites: /var/www
 
 ## Known Issues
-Please report any issues you find!
+* Unit tests are not complete
+* Please report any issues you find!
