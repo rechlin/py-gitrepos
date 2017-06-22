@@ -17,6 +17,11 @@ class repoInfo:
 
 
     def repoListFromFile(self, file):
+        """
+        - read a file
+        - create a repoList from the contents
+        - return the list
+        """
         leadText = self.leadText
         lineNum = 0
         repoList = []
@@ -49,7 +54,12 @@ class repoInfo:
 
 
     def repoSearch(self, topDir):
-        """ Return a list of paths to git repos in topDir """
+        """
+        Return a list of paths to git repos that are:
+        - in the topDir(s) provided on command line,  or
+        - in sub-folders of the topDir(s) provided
+        """
+
         results = []
         leadText = self.leadText
 
@@ -71,7 +81,11 @@ class repoInfo:
 
 
     def processRepoList(self, repoList):
-        """ Report on all repos in list """
+        """
+        Report on:
+        - all repos in list,
+        - all repos in sub-folders of folder provided on command line
+        """
 
         leadText = self.leadText
 
@@ -114,6 +128,11 @@ class repoInfo:
 
 
 def main():
+    """
+    If someone runs this library directly:
+    - process a repoList from the usual file, if present
+    """
+
     ListFileName = "git-repos.txt"
     ScriptFolder = os.path.dirname(os.path.realpath(__file__))
     repoListFile = ScriptFolder + "/" + ListFileName
@@ -130,4 +149,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
