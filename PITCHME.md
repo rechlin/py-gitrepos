@@ -1,4 +1,6 @@
-# Ottawa Python: Python as a Second Language
+## Ottawa Python: 
+# Python as a Second Language
 
-## Presenter: Rob Echlin
-## Date: July 27, 2017
+Presenter: **Rob Echlin**
+
+July 27, 2017
