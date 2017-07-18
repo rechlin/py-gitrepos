@@ -15,6 +15,21 @@ July 27, 2017
 ---
 ## Reading a text file
 
+```python
+import fileinput
+
+repoListFile = "projects-git.repos.txt"
+lineNum = 0
+repoList = []
+debug = False
+
+with fileinput.input(repoListFile) as f:
+    for line in f:
+        lineNum += 1;
+        repoList.append(line.strip())
+```
+
+
 ---
 ## Walking a directory tree
 
