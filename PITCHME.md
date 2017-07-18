@@ -1,5 +1,5 @@
-## Ottawa Python: 
-# Python as a Second Language
+### Ottawa Python: 
+### Python as a Second Language
 
 Presenter: **Rob Echlin**
 
