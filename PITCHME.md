@@ -7,16 +7,16 @@ July 27, 2017
 
 ---
 
-# Part 1: Common tasks
+## Part 1: Common tasks
+* Reading a text file
+* Walking a directory tree
+* Using a third-party library
 
 ---
-
-# Reading a text file
-
----
-
-# Walking a directory tree
+## Reading a text file
 
 ---
+## Walking a directory tree
 
-# Using a third-party library
+---
+## Using a third-party library
