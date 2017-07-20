@@ -33,7 +33,7 @@ with fileinput.input(repoListFile) as f:
 ```
 
 ---
-## Displaying the text file
+## Print the text file
 
 ```python
 #!/usr/bin/python3
