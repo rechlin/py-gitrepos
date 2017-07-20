@@ -11,6 +11,7 @@ July 27, 2017
 * Reading a text file
 * Walking a directory tree
 * Using a third-party library
+* Finding tools from the Python Library
 
 Note:
 * For experienced developers, you need simple examples, not lots of lessons
@@ -56,16 +57,16 @@ for path in repoList:
 ## Using a third-party library
 
 ---
+## Finding tools from the Python Library
+
+---
 ## Part 2: Structuring your code
-* Using tools from the Python Library
+* Checking your input
 * Creating a function
 • Creating a Class
 * Using a class you created
 * Description of function or class
 * Common functions and variables for the Object
-
----
-## Using tools from the Python Library
 
 ---
 ## Creating a function
