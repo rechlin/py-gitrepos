@@ -23,12 +23,10 @@ Note:
 import fileinput
 
 repoListFile = "projects-git.repos.txt"
-lineNum = 0
 repoList = []
 
 with fileinput.input(repoListFile) as f:
     for line in f:
-        lineNum += 1;
         repoList.append(line.strip())
 ```
 
@@ -40,12 +38,10 @@ with fileinput.input(repoListFile) as f:
 import fileinput
 
 repoListFile = "projects-git.repos.txt"
-lineNum = 0
 repoList = []
 
 with fileinput.input(repoListFile) as f:
     for line in f:
-        lineNum += 1;
         repoList.append(line.strip())
 
 for path in repoList:
