@@ -54,3 +54,31 @@ for path in repoList:
 
 ---
 ## Using a third-party library
+
+---
+## Part 2: Structuring your code
+* Using tools from the Python Library
+* Creating a function
+• Creating a Class
+* Using a class you created
+* Description of function or class
+* Common functions and variables for the Object
+
+---
+## Using tools from the Python Library
+
+---
+## Creating a function
+
+---
+## Creating a Class
+
+---
+## Using a class you created
+
+---
+## Description of function or class
+
+---
+## Common functions and variables for the Object
+
