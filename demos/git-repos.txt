@@ -1,0 +1,17 @@
+# List of Git repos on your local machine
+# generated mine using:
+# > find /home/rob/projects -name .git > git-repos.txt
+
+/home/rob/projects/docker/rob.echlin.ca-web/.git
+/home/rob/projects/docker/rob.echlin.ca-web/rob.echlin.ca/.git
+/home/rob/projects/netdevconf2_1/www.netdevconf.org/1.2/.git
+/home/rob/projects/Bash-TDD/.git
+/home/rob/projects/react/cats-n-stuff/.git
+/home/rob/projects/source/grep/.git
+/home/rob/projects/hands-on-with-kubernetes-workshop/.git
+/home/rob/projects/C/QTSimpleNotebook/QTSimpleNotebook/.git
+/home/rob/projects/klee-test/klee/.git
+/home/rob/projects/python-one/py-gitrepos/.git
+/home/rob/projects/docker/Python-DigitalOcean/.git
+/home/rob/projects/python-one
+/home/rob/projects/python-htmd/htmd/.git

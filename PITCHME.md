@@ -14,7 +14,7 @@ July 27, 2017
 * Finding tools from the Python Library
 
 Note:
-* For experienced developers, you need simple examples, not lots of lessons
+* Experienced developers need clear examples, not lots of lessons
 
 
 ---
@@ -23,7 +23,7 @@ Note:
 ```python
 import fileinput
 
-repoListFile = "projects-git.repos.txt"
+repoListFile = "git.repos.txt"
 repoList = []
 
 with fileinput.input(repoListFile) as f:
@@ -38,7 +38,7 @@ with fileinput.input(repoListFile) as f:
 #!/usr/bin/python3
 import fileinput
 
-repoListFile = "projects-git.repos.txt"
+repoListFile = "git.repos.txt"
 repoList = []
 
 with fileinput.input(repoListFile) as f:
@@ -70,6 +70,29 @@ for path in repoList:
 
 ---
 ## Creating a function
+
+```python
+#!/usr/bin/python3
+import fileinput
+
+def repoListFromFile(rFile):
+    repoList = []
+
+    with fileinput.input(rFile) as f:
+        for line in f:
+            repoList.append(line.strip())
+            
+    return repoList
+
+# main code
+repoListFile = "git-repos.txt"
+
+repoList = repoListFromFile(repoListFile)
+
+for path in repoList:
+    print(path)
+
+```
 
 ---
 ## Creating a Class
