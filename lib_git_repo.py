@@ -102,9 +102,12 @@ class repoInfo:
                 print(leadText, 'Error: No repo in ', path)
                 print(leadText, 'Possibly more than one repo in nested folders?')
                 continue
+            except pygit2.GitError as pyE:
+                print(leadText, 'Error: git error')
+                print(leadText, 'Details - ', pyE)
+                continue
             except Exception as e:
                 print(leadText, 'Error: Not sure what error', e)
-
                 raise
 
             repo = pygit2.Repository(repoPath)
