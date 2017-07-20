@@ -3,12 +3,10 @@ import os
 import glob
 
 repoList = []
-leadText = self.leadText
-topdir = "~/projects"
+topDir = "/home/rob/projects"
 
 topDirGlob = topDir + '/**/.git'
-if debug:
-    print('glob: ', topDirGlob)
+print('Debug: glob: ', topDirGlob)
 
 for filename in glob.iglob(topDirGlob, recursive=True):
     repoList.append(filename)
