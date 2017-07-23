@@ -72,13 +72,13 @@ for path in repoList:
 ---
 ## Finding tools from the Python Library (1)
 
-Use search to find a specific thing in the documentation
+Use search on docs.python.org
 * "site:docs.python.org input file"
-* Apparently DuckDuckGo ignores "site:"
-* Google found: "10.2 fileinput - iterate over lines from multiple input streams ..."
+  * Apparently DuckDuckGo ignores "site:"
+* Google found: "10.2 fileinput ..."
+* Python >> 2.7 Documentation >> The Python Standard Library ...
+  * Click "2.7": change to 3.5 or preferred
 * https://docs.python.org/3.5/library/fileinput.html
-* Python >> 2.7 Documentation >> The Python Standard Library >> 11. File and Directory Access
-  * The "2.7" is a drop down list - use it to get to 3.5, which is on my Linux system
 
 Note:
 This is a hard thing.
@@ -89,10 +89,20 @@ If you know what is in each of several modules, you have a basis for guessing.
 ## Finding tools from the Python Library (2)
 Search Everywhere!
 * Blogs
- Quora, Stack Overflow
+* Quora
+* Stack Overflow
+* Suggestions?
 
 ---
 ## Using a third-party library
+Here: pygit2, depends on gitlib2
+* Requires complete version match!
+  * pip3 gave pygit 0.25.1
+  * apt show libgit2*
+    * 0.24.1-2
+  * Download source for 0.25.1, and build manually
+  * cmake .; make; make test
+  * sudo make install
 
 ---
 ## Part 2: Structuring your code
