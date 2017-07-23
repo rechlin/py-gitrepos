@@ -70,16 +70,35 @@ for path in repoList:
 ```
 
 ---
-## Using a third-party library
+## Finding tools from the Python Library (1)
+
+Use search to find a specific thing in the documentation
+* "site:docs.python.org input file"
+* Apparently DuckDuckGo ignores "site:"
+* Google found: "10.2 fileinput - iterate over lines from multiple input streams ..."
+* https://docs.python.org/3.5/library/fileinput.html
+* Python >> 2.7 Documentation >> The Python Standard Library >> 11. File and Directory Access
+  * The "2.7" is a drop down list - use it to get to 3.5, which is on my Linux system
+
+Note:
+This is a hard thing.
+If you know what is in each of several modules, you have a basis for guessing.
+
 
 ---
-## Finding tools from the Python Library
+## Finding tools from the Python Library (2)
+Search Everywhere!
+* Blogs
+ Quora, Stack Overflow
+
+---
+## Using a third-party library
 
 ---
 ## Part 2: Structuring your code
 * Checking your input
 * Creating a function
-• Creating a Class
+* Creating a Class
 * Using a class you created
 * Description of function or class
 * Common functions and variables for the Object
