@@ -211,7 +211,7 @@ class repoInfo:
 ### Future Plans
 * About GitPitch
 * Production code
-* Unit testing in Python
+* Pytest
 
 
 ---
