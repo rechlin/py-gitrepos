@@ -4,15 +4,18 @@
 Presenter: **Rob Echlin**
 
 July 27, 2017
+Ottawa Python Authors Group (OPAG)
 
 ---
-## ToC
+## Outline
 
 ### Part 1: Common Tasks
 Break
 
-### Part 2: Structuring your code
-### Part 3: Future plans
+### Part 2: Code Structure
+
+### Future plans
+* Production changes
 * About GitPitch
 * Unit testing in Python
 
@@ -115,9 +118,9 @@ Here: pygit2, depends on gitlib2
   * sudo make install
 
 ---
-## Part 2: Structuring your code
+## Part 2: Code Structure
 
-Break here?
+Take a break here?
 
 ---
 ## Part 2: Structuring your code
@@ -150,15 +153,59 @@ for path in repoList:
 
 ---
 ## Creating a Class
+```
+class repoInfo:
+
+    def repoListFromFile(self, file):
+        print('Hello, Classics')
+```
+
+Note:
+Just add in the "Class", and indent stuff
 
 ---
 ## Using a class you created
+* Class name: repoInfo
+* Class file: lib_git_repo.py
+  * same folder as the main program
+* Import your file:
+  * ```from lib_git_repo import repoInfo```
+* Use the class:
+  * ```ri = repoInfo()```
+  * ```repoList = ri.repoListFromFile(repoListFile)```
 
 ---
 ## Description of function or class
+```
+class repoInfo:
+    """ Report information about git repos """
+
+    def repoListFromFile(self, file):
+        """
+        - read a file
+        - create a repoList from the contents
+        - return the list
+        """
+        print('Hello, Classicists')
+```
 
 ---
 ## Common functions and variables for the Object
+```
+class repoInfo:
+    """ Report information about git repos """
+
+    def __init__(self):
+        self.leadText = "     - "
+
+    def repoListFromFile(self, file):
+        """
+        - read a file
+        - create a repoList from the contents
+        - return the list
+        """
+        print(self.leadText, 'Good morning, Klaus')
+```
 
 
 
