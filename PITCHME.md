@@ -175,7 +175,7 @@ Just add in the "Class", and indent stuff
   * ```from lib_git_repo import repoInfo```
 * Use the class:
   * ```ri = repoInfo()```
-  * ```repoList = ri.repoListFromFile(repoListFile)```
+  * ```rList = ri.rListFromFile(listFile)```
 
 ---
 ## Description of function or class
@@ -193,7 +193,7 @@ class repoInfo:
 ```
 
 ---
-## Common functions and variables for the Object
+## Common bits for the Object
 ```
 class repoInfo:
     """ Report information about git repos """
