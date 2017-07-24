@@ -6,7 +6,17 @@ Presenter: **Rob Echlin**
 July 27, 2017
 
 ---
+## ToC
 
+### Part 1: Common Tasks
+Break
+
+### Part 2: Structuring your code
+### Part 3: Future plans
+* About GitPitch
+* Unit testing in Python
+
+---
 ## Part 1: Common tasks
 * Reading a text file
 * Walking a directory tree
@@ -76,7 +86,7 @@ Use search on docs.python.org
 * "site:docs.python.org input file"
   * Apparently DuckDuckGo ignores "site:"
 * Google found: "10.2 fileinput ..."
-* Python >> 2.7 Documentation >> The Python Standard Library ...
+* Python >> 2.7 Documentation >> ...
   * Click "2.7": change to 3.5 or preferred
 * https://docs.python.org/3.5/library/fileinput.html
 
@@ -97,12 +107,17 @@ Search Everywhere!
 ## Using a third-party library
 Here: pygit2, depends on gitlib2
 * Requires complete version match!
-  * pip3 gave pygit 0.25.1
+  * pip3: pygit 0.25.1
   * apt show libgit2*
     * 0.24.1-2
-  * Download source for 0.25.1, and build manually
-  * cmake .; make; make test
+  * Download source and build manually
+  * cmake .  ; make  ; make test
   * sudo make install
+
+---
+## Part 2: Structuring your code
+
+Break here?
 
 ---
 ## Part 2: Structuring your code
@@ -144,4 +159,6 @@ for path in repoList:
 
 ---
 ## Common functions and variables for the Object
+
+
 
