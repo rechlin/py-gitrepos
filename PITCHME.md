@@ -14,13 +14,10 @@ Ottawa Python Authors Group (OPAG)
 Break
 
 ### Part 2: Code Structure
-
 end?
 
 ### Future plans
-* Production changes
-* About GitPitch
-* Unit testing in Python
+
 
 ---
 ## Part 1: Common tasks
@@ -210,11 +207,10 @@ class repoInfo:
         print(self.leadText, 'Good morning, Klaus')
 ```
 
-
 ---
-### Future ideas
-* Production changes
+### Future Plans
 * About GitPitch
+* Production code
 * Unit testing in Python
 
 
