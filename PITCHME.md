@@ -4,6 +4,7 @@
 Presenter: **Rob Echlin**
 
 July 27, 2017
+
 Ottawa Python Authors Group (OPAG)
 
 ---
@@ -13,6 +14,8 @@ Ottawa Python Authors Group (OPAG)
 Break
 
 ### Part 2: Code Structure
+
+end?
 
 ### Future plans
 * Production changes
@@ -208,4 +211,16 @@ class repoInfo:
 ```
 
 
+---
+### Future ideas
+* Production changes
+* About GitPitch
+* Unit testing in Python
 
+
+---
+### End
+
+* https://gitpitch.com/rob_echlin_open_source_training/py-gitrepos-lab/master?grs=gitlab&t=sky
+* https://gitlab.com/rob_echlin_open_source_training/py-gitrepos-lab
+* http://rob.echlin.ca/
