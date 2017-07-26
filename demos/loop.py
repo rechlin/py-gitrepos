@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 # Looping along with 2 Comp Sci legends
 
-print('Must install ansicolors')
-print('from colors import color')
+# Must install ansicolors
+# -> sudo pip3 install ansicolors
 
 import fileinput
 from colors import color
-# import print_function
+import time
 
 string = []
 
@@ -17,18 +17,27 @@ with fileinput.input("loop.txt") as f:
 
 # output some of it
 myString = string[0]
-print( 'myString = ', myString)
+print( '')
 
-#for i in range(16):
-#    print(color('Color #%d' % i, fg=i))
+# extra vars
+colorNum = 1
 
-count = 1
+# Fibonacci numbers - second-last and last
 a, b = 0, 1
+
 while b <= len(myString):
     a, b = b, a + b
     # print('{} {}'.format(a, b))
     
-    print(color(myString[0:b] +'\n', fg=count))
-    count += 1
+    # increasing delay, by Fibonacci
+    time.sleep(0.05 * b)
+    
+    # color choice by count, length by Fibonacci
+    print(color(myString[0:b], fg=colorNum))
+    print()
+    colorNum += 2
+    
+       
+    
     
     
