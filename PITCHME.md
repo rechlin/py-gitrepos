@@ -67,6 +67,15 @@ with fileinput.input(repoListFile) as f:
 for path in repoList:
     print(path)
 ```
+@[1-9]
+@[11]
+@[12]
+
+Note:
+1-9 - Identical to previous slide?
+
+10 - another for loop, no need to attach anything to it, it just uses the existing array
+11 - Whatcha gonna do?
 
 ---
 ## Walking a directory tree
