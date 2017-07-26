@@ -54,7 +54,6 @@ Note:
 ## Print the text file
 
 ```python
-#!/usr/bin/python3
 import fileinput
 
 repoListFile = "git.repos.txt"
