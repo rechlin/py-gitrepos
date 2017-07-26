@@ -30,6 +30,12 @@ with fileinput.input(repoListFile) as f:
     for line in f:
         repoList.append(line.strip())
 ```
+@[1]
+@[3-4]
+
+@[6]
+@[7]
+@[8]
 
 ---
 ## Print the text file
