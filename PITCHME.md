@@ -43,7 +43,8 @@ Note:
 3 - the name of the file we will be reading
 4 - an empty array we can insert lines into
 6 - open the file for input, and give it a short name, f
-6 - colon marks the beginning of a group of lines, that the input/assignment applies to
+  - colon marks the beginning of a group of lines, that the input/assignment applies to
+  - "with" is a way to "decorate" the following for loop
 7 - do this for each line in the file, new group nested in the previous
 8 - only one line to be repeated
     - strip any whitespace from both ends of the line
