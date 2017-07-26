@@ -44,7 +44,7 @@ Note:
 4 - an empty array we can insert lines into
 6 - open the file for input, and give it a short name, f
   - colon marks the beginning of a group of lines, that the input/assignment applies to
-  - "with" is a way to "decorate" the following for loop
+  - "with" is a way to apply the open file, and the rename, just to the loop
 7 - do this for each line in the file, new group nested in the previous
 8 - only one line to be repeated
     - strip any whitespace from both ends of the line
