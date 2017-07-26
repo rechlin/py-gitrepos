@@ -67,8 +67,8 @@ for path in repoList:
     print(path)
 ```
 @[1-9]
+@[10]
 @[11]
-@[12]
 
 Note:
 1-9 - Identical to previous slide?
