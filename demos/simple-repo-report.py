@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 import fileinput
 
-repoListFile = "projects-git.repos.txt"
+repoListFile = "git-repos.txt"
 repoList = []
 
 with fileinput.input(repoListFile) as f:

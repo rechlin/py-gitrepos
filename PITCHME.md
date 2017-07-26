@@ -23,7 +23,7 @@ Note:
 ```python
 import fileinput
 
-repoListFile = "git.repos.txt"
+repoListFile = "git-repos.txt"
 repoList = []
 
 with fileinput.input(repoListFile) as f:
@@ -56,7 +56,7 @@ Note:
 ```python
 import fileinput
 
-repoListFile = "git.repos.txt"
+repoListFile = "git-repos.txt"
 repoList = []
 
 with fileinput.input(repoListFile) as f:
