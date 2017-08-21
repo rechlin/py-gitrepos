@@ -20,26 +20,28 @@ class TestRepoListFromFile:
 
     # tests
     def test_listfile_one_entry(self):
-        fileName = "one-repo_no_change.txt")
+        fileName = "one-repo_no_change.txt"
         listFile = self.ri_path + self.test_path + fileName
         list = self.ri.repoListFromFile(listFile)
         assert list == ['testdata/repo_no_change']
 
 
     def test_listfile_two_entries(self):
-        fileName = "two_repos.txt")
+        fileName = "two_repos.txt"
         listFile = self.ri_path + self.test_path + fileName
         list = self.ri.repoListFromFile(listFile)
         assert list == ['testdata/repo_no_change', 'test-data/one_change']
 
 
     def test_bad_listfile(self):
+        fileName = "no_file_here.txt"
+        listFile = self.ri_path + self.test_path + fileName
         with pytest.raises(SystemExit):
-            list = self.getList("no_file_here.txt")
+            list = self.ri.repoListFromFile(listFile)
 
 
     def test_blank_lines(self):
-        fileName = "repoList_with_spaces.txt")
+        fileName = "repoList_with_spaces.txt"
         listFile = self.ri_path + self.test_path + fileName
         list = self.ri.repoListFromFile(listFile)
         assert list == ['testdata/repo_no_change', 'test-data/one_change']
@@ -55,7 +57,7 @@ class TestRepoSearch:
         self.test_path = "/testdata/"
 
 
-    def clean_path(path_list):
+    def clean_path(self, path_list):
         ''' Remove leading folders from path that change between users '''
         scriptPath = os.path.dirname(os.path.realpath(__file__)) + '/'
 
