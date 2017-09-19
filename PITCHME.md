@@ -1,17 +1,14 @@
-### Ottawa Python:
 ### Python as a Second Language
 
 Presenter: **Rob Echlin**
 
-July 27, 2017
-
-Ottawa Python Authors Group (OPAG)
-
+v1.1
 ---
-## Outline Common tasks
+## Common tasks
 * Reading a text file
+* Display
 * Walking a directory tree
-* Using a third-party library
+* Functions
 
 Note:
 * Experienced developers need clear examples, not lots of lessons
