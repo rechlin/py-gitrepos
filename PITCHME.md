@@ -1,8 +1,8 @@
-### Python as a Second Language
+# Python as a Second Language
+
 
 Presenter: **Rob Echlin**
 
-v1.1
 ---
 ## Common tasks
 * Reading a text file
