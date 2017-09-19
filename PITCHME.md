@@ -1,4 +1,4 @@
-# Python as a Second Language
+## Python as a Second Language
 
 
 Presenter: **Rob Echlin**
@@ -84,7 +84,6 @@ repoList = []
 topDir = "/home/rob/projects"
 
 topDirGlob = topDir + '/**/.git'
-print('Debug: glob: ', topDirGlob)
 
 for filename in glob.iglob(topDirGlob, recursive=True):
     repoList.append(filename)
@@ -92,6 +91,13 @@ for filename in glob.iglob(topDirGlob, recursive=True):
 for path in repoList:
     print(path)
 ```
+@[1-2]
+@[4-5]
+@[7]
+@[9]
+@[10]
+@[12-13]
+
 
 ---
 ## Functions
