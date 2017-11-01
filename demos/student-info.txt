@@ -1,13 +1,22 @@
 Information for students
 
+
 Install these
 - https://atom.io/
   - click on "Download" button
   - your OS may vary, but it should match what you have
+
 - https://www.python.org/downloads/release/python-2714/
+
   - This is the older version of Python. I chose it because of the sample code
     I have available, written in 2.7
   - I prefer Python 3, in general.
 
+Files are at:
 
-
+gitHub.com/rechlin/
+- py-gitrepos
+- folder: demos
+- files we are interested in:
+  - first.py
+  - loop.py

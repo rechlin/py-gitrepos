@@ -4,7 +4,6 @@
 # Must install ansicolors
 # -> sudo pip3 install ansicolors
 
-import fileinput
 from colors import color
 import time
 
